@@ -153,11 +153,9 @@ class Juego_UserInyerface(unittest.TestCase):
         # AUTOIT, PYTHON PYWIN32 O SENDKEYS... SON ESTAS HARRAMIENTAS LAS QUE PODRIAN PERMITIR INTERACTUAR CON LA
         # VENTANA EMERGENTE DEL SISTEMA OPERATIVO Y HACER LA CARGA DE IMAGEN
 
-        driver.find_element(By.CLASS_NAME, "avatar-and"
-                                           "-interests__upload-button").send_keys(r"C:\\Users\\user\\Documents\\"
-                                                                                  r"Proyectos\\Jmeter\\INTERFAZ"
-                                                                                  r"–PRUEBA_DE_FUNCIONALIDAD\\"
-                                                                                  r"Recursos\\avatar.png")
+        upload = driver.find_element(By.CLASS_NAME, "avatar-and-interests__upload-button")
+
+        upload.send_keys("/Users/user/Documents/Proyectos/Jmeter/INTERFAZ–PRUEBA_DE_FUNCIONALIDAD/Recursos/avatar.png")
         time.sleep(5)
 
         # DESMARCAR TODOS LOS CHECK DE INTERESES
@@ -234,7 +232,7 @@ class Juego_UserInyerface(unittest.TestCase):
         wb.close()
 
     def tearDown(self):
-    self.driver.close()
+        self.driver.close()
 
 
 if __name__ == '__main__':
